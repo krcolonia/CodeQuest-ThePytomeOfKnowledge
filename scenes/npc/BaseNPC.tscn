@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://g04brrptnxbk"]
+
+[ext_resource type="Script" path="res://scenes/npc/base_npc.gd" id="1_3itjb"]
+[ext_resource type="Texture2D" uid="uid://cgmkqi17ce1m3" path="res://assets/player/DummySprite.png" id="1_5wcxi"]
+[ext_resource type="PackedScene" uid="uid://dmmv4ljcluhnb" path="res://scenes/interaction/interaction_area/interaction_area.tscn" id="2_noy77"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eh6wc"]
+size = Vector2(12, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h05pj"]
+size = Vector2(12, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma6rr"]
+size = Vector2(7, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnjy4"]
+size = Vector2(7, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bcra5"]
+size = Vector2(16, 16)
+
+[node name="BaseNPC" type="Node2D"]
+script = ExtResource("1_3itjb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5wcxi")
+hframes = 4
+vframes = 4
+
+[node name="InteractionArea" parent="Sprite2D" instance=ExtResource("2_noy77")]
+action_name = "talk"
+interact_type = "talk"
+
+[node name="CollisionUp" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
+position = Vector2(0, -4.5)
+shape = SubResource("RectangleShape2D_eh6wc")
+debug_color = Color(0.705882, 0, 0, 0.419608)
+
+[node name="CollisionDown" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
+position = Vector2(0, 20.5)
+shape = SubResource("RectangleShape2D_h05pj")
+debug_color = Color(0.705882, 0, 0, 0.419608)
+
+[node name="CollisionLeft" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
+position = Vector2(-12.5, 8)
+shape = SubResource("RectangleShape2D_ma6rr")
+debug_color = Color(0.705882, 0, 0, 0.419608)
+
+[node name="CollisionRight" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
+position = Vector2(12.5, 8)
+shape = SubResource("RectangleShape2D_gnjy4")
+debug_color = Color(0.705882, 0, 0, 0.419608)
+
+[node name="CollisionBody" type="StaticBody2D" parent="Sprite2D"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/CollisionBody"]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_bcra5")

@@ -1,0 +1,233 @@
+[gd_scene load_steps=26 format=3 uid="uid://cs7ww2ibmq1gs"]
+
+[ext_resource type="Script" path="res://scripts/menus/MainMenu.gd" id="1_wchry"]
+[ext_resource type="Texture2D" uid="uid://d3fdmf755ixsf" path="res://assets/background/MenuBG.png" id="2_6iyt1"]
+[ext_resource type="Texture2D" uid="uid://1w4ck4sxfvgw" path="res://assets/fx/Leaves-Sheet.png" id="3_kgr7k"]
+[ext_resource type="Theme" uid="uid://8ljahhyhocjx" path="res://assets/themes/UI.tres" id="5_6ow6f"]
+[ext_resource type="Script" path="res://addons/monitor_overlay/monitor_overlay.gd" id="6_u8yeq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7slh"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nt02h"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hkff"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0by4"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kdw3"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(0, 150, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4m7n"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(150, 150, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81p1q"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(300, 150, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi5cw"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(450, 150, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qa78"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(0, 300, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t71gj"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(150, 300, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbeea"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(300, 300, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1js0v"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(450, 300, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wggu"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(0, 450, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfbrc"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(150, 450, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_718i1"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(300, 450, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wblkm"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(450, 450, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqljp"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(0, 600, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msfb7"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(150, 600, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_278gk"]
+atlas = ExtResource("3_kgr7k")
+region = Rect2(300, 600, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hmhy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7slh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nt02h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hkff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0by4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kdw3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4m7n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81p1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi5cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5qa78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t71gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbeea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1js0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wggu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfbrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_718i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wblkm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqljp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msfb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_278gk")
+}],
+"loop": true,
+"name": &"Leaf",
+"speed": 5.0
+}]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wchry")
+metadata/_edit_vertical_guides_ = [720.0, 360.0]
+
+[node name="BGCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BG Image" type="TextureRect" parent="BGCanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6iyt1")
+expand_mode = 1
+stretch_mode = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimLeaves" type="AnimatedSprite2D" parent="BGCanvasLayer"]
+process_mode = 3
+texture_filter = 1
+scale = Vector2(4.8, 8.53333)
+sprite_frames = SubResource("SpriteFrames_0hmhy")
+animation = &"Leaf"
+autoplay = "Leaf"
+frame_progress = 0.021174
+speed_scale = 1.75
+centered = false
+
+[node name="InputCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuBtns" type="VBoxContainer" parent="InputCanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.251
+anchor_top = 0.462
+anchor_right = 0.749
+anchor_bottom = 0.795
+offset_left = 0.279984
+offset_top = 0.640015
+offset_right = -0.280029
+offset_bottom = -0.600037
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="StartBtn" type="Button" parent="InputCanvasLayer/MenuBtns"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_6ow6f")
+action_mode = 0
+text = "START"
+
+[node name="LogoutBtn" type="Button" parent="InputCanvasLayer/MenuBtns"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_6ow6f")
+action_mode = 0
+text = "LOGOUT"
+
+[node name="ExitBtn" type="Button" parent="InputCanvasLayer/MenuBtns"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_6ow6f")
+action_mode = 0
+text = "EXIT"
+
+[node name="MonitorOverlay" type="VBoxContainer" parent="InputCanvasLayer"]
+visible = false
+custom_minimum_size = Vector2(300, 0)
+offset_right = 300.0
+offset_bottom = 266.0
+script = ExtResource("6_u8yeq")
+process = true
+static_memory = true
+video_memory = true
+texture_memory = true
+
+[connection signal="button_up" from="InputCanvasLayer/MenuBtns/StartBtn" to="." method="_on_start_btn_button_up"]
+[connection signal="pressed" from="InputCanvasLayer/MenuBtns/LogoutBtn" to="." method="_on_logout_btn_pressed"]
+[connection signal="button_up" from="InputCanvasLayer/MenuBtns/ExitBtn" to="." method="_on_exit_btn_button_up"]

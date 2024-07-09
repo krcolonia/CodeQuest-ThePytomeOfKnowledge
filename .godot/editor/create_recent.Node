@@ -1,0 +1,14 @@
+Panel
+CanvasLayer
+MarginContainer
+CenterContainer
+RichTextLabel
+Control
+Container
+Button
+Label
+HBoxContainer
+AudioStreamPlayer2D
+VBoxContainer
+CollisionShape2D
+StaticBody2D

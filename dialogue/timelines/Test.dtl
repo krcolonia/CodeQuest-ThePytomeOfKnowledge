@@ -1,0 +1,9 @@
+DemoTestChar: <Hey/Hello> there!
+DemoTestChar: Is this [b]a demo level[/b], or [b]an actual one[/b]?
+- A Demo Level
+	DemoTestChar: Oh well, this dialogue is supposed to be here. Move on!
+- An Actual, Released Level
+	DemoTestChar: This is a test dialogue made only for this demo level. If you ever see this inside the actual game...
+	DemoTestChar: Please report it to us immediately! You can email me at [i]kurt.colonia@neu.edu.ph[/i]
+	DemoTestChar: I'll try and fix it right away! Don't forget to include the details and where you found this dialogue!
+	DemoTestChar: Have a nice [b]Python[/b] coding-filled day!

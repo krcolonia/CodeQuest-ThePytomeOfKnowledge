@@ -1,0 +1,197 @@
+[gd_scene load_steps=18 format=3 uid="uid://dty4wm0fleopa"]
+
+[ext_resource type="Script" path="res://scripts/ui/IngameUI.gd" id="1_lxkmb"]
+[ext_resource type="Texture2D" uid="uid://csra7seuw3oe6" path="res://assets/ui/buttons/move_button.png" id="2_23o5f"]
+[ext_resource type="Texture2D" uid="uid://hrerkrm84ia0" path="res://assets/ui/buttons/interact_button_disabled.png" id="7_b3xd0"]
+[ext_resource type="Texture2D" uid="uid://coyxnqyxpue1w" path="res://assets/ui/buttons/interact_button_tapped.png" id="7_d7q6w"]
+[ext_resource type="Script" path="res://addons/monitor_overlay/monitor_overlay.gd" id="7_jyevs"]
+[ext_resource type="Theme" uid="uid://8ljahhyhocjx" path="res://assets/themes/UI.tres" id="8_0mumv"]
+[ext_resource type="Texture2D" uid="uid://ch2yditlk4ick" path="res://assets/ui/buttons/interact_button.png" id="8_vchiw"]
+[ext_resource type="PackedScene" uid="uid://6k5kkojd6a0n" path="res://scenes/ui/CodingUI.tscn" id="8_vv5dr"]
+[ext_resource type="Texture2D" uid="uid://rh26jqj0vjbv" path="res://assets/ui/placeholder/exit.png" id="9_k0rng"]
+[ext_resource type="Texture2D" uid="uid://drcky6ahgj22e" path="res://assets/ui/buttons/pause_button.png" id="10_ng3tv"]
+[ext_resource type="PackedScene" uid="uid://1rvo4q2w1kdr" path="res://scenes/ui/PauseUI.tscn" id="11_43kvf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1k2ej"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g7u3r"]
+texture = ExtResource("7_b3xd0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a4i6x"]
+texture = ExtResource("8_vchiw")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ic8rr"]
+texture = ExtResource("7_d7q6w")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xmfao"]
+texture = ExtResource("8_vchiw")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m862n"]
+
+[node name="IngameUI" type="CanvasLayer" groups=["ui"]]
+script = ExtResource("1_lxkmb")
+
+[node name="Controls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dpad" type="Control" parent="Controls"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = -346.0
+offset_right = 243.0
+offset_bottom = -146.0
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+
+[node name="up" type="Control" parent="Controls/Dpad"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_right = 32.0
+offset_bottom = 64.0
+grow_horizontal = 2
+
+[node name="upBtn" type="TouchScreenButton" parent="Controls/Dpad/up"]
+texture_normal = ExtResource("2_23o5f")
+passby_press = true
+
+[node name="down" type="Control" parent="Controls/Dpad"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_right = 96.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 0
+rotation = 3.14159
+
+[node name="downBtn" type="TouchScreenButton" parent="Controls/Dpad/down"]
+texture_normal = ExtResource("2_23o5f")
+passby_press = true
+
+[node name="left" type="Control" parent="Controls/Dpad"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 96.0
+grow_vertical = 2
+rotation = -1.5708
+
+[node name="leftBtn" type="TouchScreenButton" parent="Controls/Dpad/left"]
+texture_normal = ExtResource("2_23o5f")
+passby_press = true
+
+[node name="right" type="Control" parent="Controls/Dpad"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 64.0
+offset_bottom = 32.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = 1.5708
+
+[node name="rightBtn" type="TouchScreenButton" parent="Controls/Dpad/right"]
+texture_normal = ExtResource("2_23o5f")
+passby_press = true
+
+[node name="MonitorOverlay" type="VBoxContainer" parent="Controls"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -300.0
+offset_bottom = 50.0
+grow_horizontal = 0
+script = ExtResource("7_jyevs")
+process = true
+static_memory = true
+video_memory = true
+texture_memory = true
+audio_output_latency = true
+
+[node name="InteractButton" type="Button" parent="Controls"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -262.0
+offset_top = -288.0
+offset_right = -190.0
+offset_bottom = -216.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(2.5, 2.5)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1k2ej")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_g7u3r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_a4i6x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ic8rr")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xmfao")
+action_mode = 0
+
+[node name="pauseBtn" type="Button" parent="Controls"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 87.0
+offset_bottom = 87.0
+scale = Vector2(1.25, 1.25)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_m862n")
+icon = ExtResource("10_ng3tv")
+flat = true
+
+[node name="CodingUI" parent="." instance=ExtResource("8_vv5dr")]
+visible = false
+
+[node name="CloseButton" type="Button" parent="CodingUI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -127.0
+offset_top = 40.0
+offset_right = 23.0
+offset_bottom = 190.0
+grow_horizontal = 0
+scale = Vector2(0.6, 0.6)
+theme = ExtResource("8_0mumv")
+icon = ExtResource("9_k0rng")
+
+[node name="PauseUI" parent="." instance=ExtResource("11_43kvf")]
+visible = false
+
+[node name="ResumeBtn" type="Button" parent="PauseUI/MarginContainer/VBoxContainer/OptionsPanel/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_0mumv")
+text = "Resume  Game"
+
+[connection signal="pressed" from="Controls/InteractButton" to="." method="_on_interact_button_pressed"]
+[connection signal="pressed" from="Controls/pauseBtn" to="." method="_on_pause_btn_pressed"]
+[connection signal="pressed" from="CodingUI/CloseButton" to="." method="_on_close_coding_button_pressed"]
+[connection signal="pressed" from="PauseUI/MarginContainer/VBoxContainer/OptionsPanel/MarginContainer/VBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+
+[editable path="PauseUI"]

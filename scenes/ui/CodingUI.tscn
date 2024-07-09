@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://6k5kkojd6a0n"]
+
+[ext_resource type="Script" path="res://scripts/ui/CodingUI.gd" id="1_a5yen"]
+[ext_resource type="Texture2D" uid="uid://c2ih08t74tjfr" path="res://assets/ui/textbox/textbox_v1.png" id="2_5lign"]
+[ext_resource type="FontFile" uid="uid://c12rxvx2c72aa" path="res://assets/fonts/console_font/monogram-extended.ttf" id="2_r667b"]
+[ext_resource type="Theme" uid="uid://8ljahhyhocjx" path="res://assets/themes/UI.tres" id="4_k0hxq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ddv33"]
+texture = ExtResource("2_5lign")
+texture_margin_left = 45.0
+texture_margin_top = 45.0
+texture_margin_right = 45.0
+texture_margin_bottom = 45.0
+
+[node name="CodingUi" type="CanvasLayer"]
+script = ExtResource("1_a5yen")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_ddv33")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 65
+theme_override_constants/margin_top = 135
+theme_override_constants/margin_right = 65
+theme_override_constants/margin_bottom = 65
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="CodeEdit" type="CodeEdit" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/background_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_r667b")
+theme_override_font_sizes/font_size = 32
+theme_override_colors/line_number_color = Color(1, 1, 1, 1)
+scroll_smooth = true
+gutters_draw_bookmarks = true
+gutters_draw_line_numbers = true
+indent_automatic = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
+
+[node name="Output" type="TextEdit" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.45
+theme_override_colors/background_color = Color(0, 0, 0, 0.54902)
+theme_override_colors/font_readonly_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_r667b")
+theme_override_font_sizes/font_size = 32
+text = "Output:"
+editable = false
+shortcut_keys_enabled = false
+
+[node name="RunBtn" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_k0hxq")
+text = "Run Code"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/RunBtn" to="." method="_on_run_btn_pressed"]
+[connection signal="request_completed" from="HTTPRequest" to="." method="_on_http_request_request_completed"]

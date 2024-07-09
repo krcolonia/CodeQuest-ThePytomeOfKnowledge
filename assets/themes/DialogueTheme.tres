@@ -1,0 +1,54 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=12 format=3 uid="uid://dh6dakmkq0sc7"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_16dg0"]
+[ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://assets/dialogic_styles/CustomDialogueTheme/custom_dialogue_theme.tscn" id="1_jwqlp"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_nev4a"]
+[ext_resource type="PackedScene" uid="uid://cpakkwkjiyiud" path="res://assets/dialogic_styles/CustomDialogueTheme/VisualNovelTextbox/custom_vn_textbox_layer.tscn" id="3_2hewm"]
+[ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_1uh2s"]
+[ext_resource type="PackedScene" uid="uid://co7nok0mvff4o" path="res://assets/dialogic_styles/CustomDialogueTheme/CustomDialogueChoices/CenteredChoices/custom_vn_choice_layer.tscn" id="4_2k84p"]
+[ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://assets/dialogic_styles/CustomDialogueTheme/CustomGlossaryTheme/PopupGlossary/custom_glossary_popup_layer.tscn" id="6_hxfp8"]
+
+[sub_resource type="Resource" id="Resource_j2en1"]
+script = ExtResource("1_16dg0")
+scene = ExtResource("4_1uh2s")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_c8v3e"]
+script = ExtResource("1_16dg0")
+scene = ExtResource("3_2hewm")
+overrides = {
+"bold_font": "\"res://assets/fonts/Minecraft-Bold.otf\"",
+"bold_italics_font": "\"res://assets/fonts/Minecraft-BoldItalic.otf\"",
+"box_color_custom": "Color(1, 1, 1, 1)",
+"box_color_use_global": "false",
+"box_panel": "\"res://assets/dialogic_styles/CustomDialogueTheme/DialogueStyle.tres\"",
+"box_size": "Vector2(700, 450)",
+"italics_font": "\"res://assets/fonts/Minecraft-Italic.otf\"",
+"name_label_box_offset": "Vector2(0, -40)",
+"normal_font": "\"res://assets/fonts/Minecraft-Regular.otf\"",
+"text_custom_color": "Color(0, 0, 0, 1)",
+"text_size": "32.0",
+"text_use_global_color": "false",
+"text_use_global_font": "false"
+}
+
+[sub_resource type="Resource" id="Resource_ervl7"]
+script = ExtResource("1_16dg0")
+scene = ExtResource("4_2k84p")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_jtbff"]
+script = ExtResource("1_16dg0")
+scene = ExtResource("6_hxfp8")
+overrides = {}
+
+[resource]
+script = ExtResource("2_nev4a")
+name = "DialogueTheme"
+base_scene = ExtResource("1_jwqlp")
+base_overrides = {
+"global_font": "\"res://assets/fonts/Minecraft-Regular.otf\"",
+"global_font_size": "32.0"
+}
+layers = Array[ExtResource("1_16dg0")]([SubResource("Resource_j2en1"), SubResource("Resource_c8v3e"), SubResource("Resource_ervl7"), SubResource("Resource_jtbff")])
+metadata/_latest_layer = -1
