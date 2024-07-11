@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://g04brrptnxbk"]
 
-[ext_resource type="Script" path="res://scenes/npc/base_npc.gd" id="1_3itjb"]
+[ext_resource type="Script" path="res://scripts/gameplay/npc/base_npc.gd" id="1_3itjb"]
 [ext_resource type="Texture2D" uid="uid://cgmkqi17ce1m3" path="res://assets/player/DummySprite.png" id="1_5wcxi"]
 [ext_resource type="PackedScene" uid="uid://dmmv4ljcluhnb" path="res://scenes/interaction/interaction_area/interaction_area.tscn" id="2_noy77"]
 

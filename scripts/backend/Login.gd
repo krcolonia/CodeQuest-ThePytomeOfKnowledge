@@ -24,7 +24,7 @@ extends Control
 
 var save_path = "user://user_info.save"
 
-func _ready():
+func _ready() -> void:
 	close_popup()
 	$InputCanvas/CanvasModulate.show()
 	$AnimationPlayer.play("fade_in")
