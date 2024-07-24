@@ -1,6 +1,9 @@
-res://scenes/levels/demo/DemoLevel.tscn
-res://assets/themes/DialogueTheme.tres
-res://assets/tilemap/interior-tilemap.tres
+res://scenes/npc/BaseNPC.tscn
 res://assets/themes/UI.tres
-res://scenes/ui/IngameUI.tscn
-res://scenes/account_management/LoginScreen.tscn
+res://assets/tilemap/interior-tilemap.tres
+res://assets/themes/DialogueTheme.tres
+res://assets/ui/shaders/melt_effect.gdshader
+res://dialogue/timelines/Test.dtl
+res://scenes/player/Player.tscn
+res://scripts/gameplay/npc/base_npc.gd
+res://scripts/gameplay/interaction/interaction_area.gd

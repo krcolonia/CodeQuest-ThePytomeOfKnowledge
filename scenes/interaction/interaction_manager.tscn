@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://chy3s4mm1w5f8"]
+[gd_scene load_steps=3 format=3 uid="uid://chy3s4mm1w5f8"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/interaction/interaction_manager.gd" id="1_ea0w1"]
+[ext_resource type="FontFile" uid="uid://dxdarhen86t2h" path="res://assets/fonts/Minecraft-Regular.otf" id="2_eab5i"]
 
 [node name="InteractionManager" type="Node2D"]
 script = ExtResource("1_ea0w1")
@@ -14,6 +15,8 @@ offset_left = -52.5
 offset_right = 52.5
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_eab5i")
 theme_override_font_sizes/font_size = 10
 text = "Tap to Interact"
 horizontal_alignment = 1

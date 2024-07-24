@@ -1,8 +1,8 @@
 [gd_scene load_steps=36 format=3 uid="uid://jgwmu8h1arkm"]
 
 [ext_resource type="Script" path="res://scripts/player/Player.gd" id="1_gtwlb"]
-[ext_resource type="Texture2D" uid="uid://b0qe384asllmi" path="res://assets/player/CharacterSprite.png" id="1_mh0fx"]
-[ext_resource type="PackedScene" uid="uid://dty4wm0fleopa" path="res://scenes/ui/IngameUI.tscn" id="2_dbwwh"]
+[ext_resource type="Texture2D" uid="uid://bogcafrlltej2" path="res://assets/player/Male_MC.png" id="2_odqtq"]
+[ext_resource type="PackedScene" uid="uid://dty4wm0fleopa" path="res://scenes/ui/IngameUI.tscn" id="4_aukwh"]
 [ext_resource type="AudioStream" uid="uid://b138apeendhiu" path="res://assets/sounds/footstep.wav" id="4_x0wco"]
 
 [sub_resource type="RectangleShape2D" id="1"]
@@ -506,10 +506,11 @@ states/Walk/position = Vector2(563, 73)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_mask = 0
 script = ExtResource("1_gtwlb")
+facing_direction = 1
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
-texture = ExtResource("1_mh0fx")
+texture = ExtResource("2_odqtq")
 hframes = 4
 vframes = 4
 region_enabled = true
@@ -524,12 +525,11 @@ target_position = Vector2(0, 24)
 collision_mask = 2
 hit_from_inside = true
 
+[node name="IngameUI" parent="." instance=ExtResource("4_aukwh")]
+
 [node name="Camera2D" type="Camera2D" parent="."]
-z_index = 20
 zoom = Vector2(5, 5)
 position_smoothing_speed = 15.0
-
-[node name="IngameUI" parent="." instance=ExtResource("2_dbwwh")]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_x0wco")
@@ -555,22 +555,22 @@ parameters/Idle/blend_position = Vector2(0, 1)
 parameters/Idle/0/current_length = 1.0
 parameters/Idle/0/current_position = 1.0
 parameters/Idle/0/current_delta = 0.0
-parameters/Idle/1/current_length = null
-parameters/Idle/1/current_position = null
-parameters/Idle/1/current_delta = null
+parameters/Idle/1/current_length = 1.0
+parameters/Idle/1/current_position = 0.5
+parameters/Idle/1/current_delta = 0.0166667
 parameters/Idle/2/current_length = 1.0
-parameters/Idle/2/current_position = 0.770503
-parameters/Idle/2/current_delta = 0.0180556
+parameters/Idle/2/current_position = 1.0
+parameters/Idle/2/current_delta = 0.0
 parameters/Idle/3/current_length = 1.0
-parameters/Idle/3/current_position = 0.602936
-parameters/Idle/3/current_delta = 0.070286
+parameters/Idle/3/current_position = 1.0
+parameters/Idle/3/current_delta = 0.0
 parameters/Start/current_length = 0.0
 parameters/Start/current_position = 0.0
 parameters/Start/current_delta = 0.0
 parameters/Turn/current_length = 0.1
 parameters/Turn/current_position = 0.1
 parameters/Turn/current_delta = 0.0
-parameters/Turn/blend_position = Vector2(-0.0104068, 0.743363)
+parameters/Turn/blend_position = Vector2(0, 1)
 parameters/Turn/0/current_length = 0.1
 parameters/Turn/0/current_position = 0.1
 parameters/Turn/0/current_delta = 0.0

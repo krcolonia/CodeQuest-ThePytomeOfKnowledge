@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dmmv4ljcluhnb" path="res://scenes/interaction/interaction_area/interaction_area.tscn" id="2_b4qco"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5iw0t"]
-size = Vector2(12, 7)
+size = Vector2(16, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r5tba"]
 size = Vector2(16, 2)
@@ -21,7 +21,7 @@ action_name = "code"
 interact_type = "code"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
-position = Vector2(0, 4.5)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_5iw0t")
 debug_color = Color(1, 0, 0.088366, 0.42)
 

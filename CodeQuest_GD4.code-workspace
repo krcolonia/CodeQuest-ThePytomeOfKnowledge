@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"godotTools.editorPath.godot4": "c:\\Program Files (x86)\\Godot\\Godot 4.3 Beta2\\Godot_v4.3-beta2_win64.exe"
+	}
+}

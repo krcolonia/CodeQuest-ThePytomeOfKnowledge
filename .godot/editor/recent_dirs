@@ -1,5 +1,8 @@
+res://assets/ui/shaders
+res://scripts/levels/level1
+res://scenes/ui
+res://scenes/objects
 res://assets/fonts
-res://assets/fonts/IMfell
 res://assets/dialogic_styles/CustomDialogueTheme
 res://assets/dialogic_styles/CustomDialogueTheme/CustomGlossaryTheme
 res://assets/dialogic_glossary
@@ -8,11 +11,9 @@ res://assets/dialogic_styles/CustomDialogueTheme/CustomDialogueChoices
 res://assets/dialogic_character
 res://dialogue/timelines
 res://scenes/npc
-res://scripts/levels/level1
 res://assets/dialogic_styles
 res://assets/themes
 res://scripts/ui
-res://scenes/ui
 res://assets/tilemap
 res://scripts/gameplay/objects
 res://scenes/interaction

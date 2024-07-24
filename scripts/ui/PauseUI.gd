@@ -8,7 +8,8 @@ func _on_settings_btn_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_main_menu_btn_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menus/MainMenu.tscn")
+	# get_tree().change_scene_to_file("res://scenes/menus/MainMenu.tscn")
+	SceneManager.return_mainmenu()
 
 func _on_quit_game_btn_pressed() -> void:
 	get_tree().quit()

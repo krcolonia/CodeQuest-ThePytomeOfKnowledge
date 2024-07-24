@@ -22,16 +22,16 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+SceneManager="*res://scenes/ui/SceneManager.tscn"
+InteractionManager="*res://scenes/interaction/interaction_manager.tscn"
 JDoodle="*res://scripts/backend/JDoodle.gd"
 Firebase="*res://scripts/backend/Firebase.gd"
-InteractionManager="*res://scenes/interaction/interaction_manager.tscn"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
-"DemoTestChar": "res://assets/dialogic_character/DemoTestChar.dch",
-"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
+"DemoTestChar": "res://assets/dialogic_character/DemoTestChar.dch"
 }
 directories/dtl_directory={
 "Test": "res://dialogue/timelines/Test.dtl"
@@ -77,7 +77,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/monitor_overlay/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/monitor_overlay/plugin.cfg")
 
 [global_group]
 
@@ -151,3 +151,4 @@ renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 anti_aliasing/screen_space_roughness_limiter/enabled=false
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

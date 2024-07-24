@@ -117,7 +117,6 @@ texture_normal = ExtResource("2_23o5f")
 passby_press = true
 
 [node name="MonitorOverlay" type="VBoxContainer" parent="Controls"]
-visible = false
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
 anchors_preset = 1
@@ -140,13 +139,13 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -262.0
-offset_top = -288.0
-offset_right = -190.0
-offset_bottom = -216.0
+offset_left = -248.0
+offset_top = -272.0
+offset_right = -176.0
+offset_bottom = -200.0
 grow_horizontal = 0
 grow_vertical = 0
-scale = Vector2(2.5, 2.5)
+scale = Vector2(2, 2)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_1k2ej")
 theme_override_styles/disabled = SubResource("StyleBoxTexture_g7u3r")
 theme_override_styles/hover = SubResource("StyleBoxTexture_a4i6x")

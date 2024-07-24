@@ -29,7 +29,7 @@ func _ready():
 	leftBtn.released.connect(_on_left_btn_released)
 	rightBtn.released.connect(_on_right_btn_released)
 
-	interactBtn.disabled = true
+	interactBtn.hide()
 
 
 func _on_up_btn_pressed():
@@ -59,10 +59,10 @@ func _on_right_btn_released():
 	Input.action_release("ui_right")
 
 func enable_interact_button() -> void:
-	interactBtn.disabled = false
+	interactBtn.show()
 
 func disable_interact_button() -> void:
-	interactBtn.disabled = true
+	interactBtn.hide()
 
 func _on_interact_button_pressed() -> void:
 	var interact_event = InputEventAction.new()

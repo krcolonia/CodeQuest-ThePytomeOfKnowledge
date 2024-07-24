@@ -68,7 +68,10 @@ func _on_realtime_db_request_completed(_result:int, response_code:int, _headers:
 			file = FileAccess.open(save_path, FileAccess.WRITE)
 		else:
 			file = FileAccess.open(save_path, FileAccess.READ_WRITE)
+		
 		file.store_var(Firebase.user_info)
+
+		file.get_var()
 
 		close_popup()
 		$AnimationPlayer.play("fade_out")

@@ -1,23 +1,137 @@
-[gd_scene load_steps=9 format=3 uid="uid://g04brrptnxbk"]
+[gd_scene load_steps=21 format=3 uid="uid://g04brrptnxbk"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/npc/base_npc.gd" id="1_3itjb"]
 [ext_resource type="Texture2D" uid="uid://cgmkqi17ce1m3" path="res://assets/player/DummySprite.png" id="1_5wcxi"]
 [ext_resource type="PackedScene" uid="uid://dmmv4ljcluhnb" path="res://scenes/interaction/interaction_area/interaction_area.tscn" id="2_noy77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eh6wc"]
-size = Vector2(12, 7)
+size = Vector2(12, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h05pj"]
-size = Vector2(12, 7)
+size = Vector2(12, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ma6rr"]
-size = Vector2(7, 12)
+size = Vector2(6, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnjy4"]
-size = Vector2(7, 12)
+size = Vector2(6, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bcra5"]
 size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_cf5vt"]
+resource_name = "idle_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
+[sub_resource type="Animation" id="Animation_68vuu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ltfhn"]
+resource_name = "idle_down"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ex55t"]
+resource_name = "idle_left"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+
+[sub_resource type="Animation" id="Animation_nopsa"]
+resource_name = "idle_right"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yds01"]
+_data = {
+"RESET": SubResource("Animation_68vuu"),
+"idle_down": SubResource("Animation_ltfhn"),
+"idle_left": SubResource("Animation_ex55t"),
+"idle_right": SubResource("Animation_nopsa"),
+"idle_up": SubResource("Animation_cf5vt")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nttk4"]
+animation = &"idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_05nda"]
+animation = &"idle_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ak4n"]
+animation = &"idle_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2anjn"]
+animation = &"idle_up"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_xhwuj"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_nttk4")
+blend_point_0/pos = Vector2(-1, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_05nda")
+blend_point_1/pos = Vector2(1, 0)
+blend_point_2/node = SubResource("AnimationNodeAnimation_7ak4n")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_2anjn")
+blend_point_3/pos = Vector2(0, -1)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_5a1rk"]
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_xhwuj")
+states/Idle/position = Vector2(321, 100)
 
 [node name="BaseNPC" type="Node2D"]
 script = ExtResource("1_3itjb")
@@ -32,22 +146,22 @@ action_name = "talk"
 interact_type = "talk"
 
 [node name="CollisionUp" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
-position = Vector2(0, -4.5)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_eh6wc")
 debug_color = Color(0.705882, 0, 0, 0.419608)
 
 [node name="CollisionDown" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
-position = Vector2(0, 20.5)
+position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_h05pj")
 debug_color = Color(0.705882, 0, 0, 0.419608)
 
 [node name="CollisionLeft" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
-position = Vector2(-12.5, 8)
+position = Vector2(-11, 8)
 shape = SubResource("RectangleShape2D_ma6rr")
 debug_color = Color(0.705882, 0, 0, 0.419608)
 
 [node name="CollisionRight" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
-position = Vector2(12.5, 8)
+position = Vector2(11, 8)
 shape = SubResource("RectangleShape2D_gnjy4")
 debug_color = Color(0.705882, 0, 0, 0.419608)
 
@@ -58,3 +172,37 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/CollisionBody"]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_bcra5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_yds01")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_5a1rk")
+anim_player = NodePath("../AnimationPlayer")
+parameters/current_length = 0.0
+parameters/current_position = 0.0
+parameters/current_delta = 0.0
+parameters/End/current_length = null
+parameters/End/current_position = null
+parameters/End/current_delta = null
+parameters/Idle/current_length = 1.0
+parameters/Idle/current_position = 1.0
+parameters/Idle/current_delta = 0.0
+parameters/Idle/blend_position = Vector2(0, 1)
+parameters/Idle/0/current_length = null
+parameters/Idle/0/current_position = null
+parameters/Idle/0/current_delta = null
+parameters/Idle/1/current_length = false
+parameters/Idle/1/current_position = false
+parameters/Idle/1/current_delta = false
+parameters/Idle/2/current_length = false
+parameters/Idle/2/current_position = false
+parameters/Idle/2/current_delta = false
+parameters/Idle/3/current_length = 1.0
+parameters/Idle/3/current_position = 1.0
+parameters/Idle/3/current_delta = 0.0
+parameters/Start/current_length = 0.0
+parameters/Start/current_position = 0.0
+parameters/Start/current_delta = 0.0

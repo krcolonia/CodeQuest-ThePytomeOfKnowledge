@@ -47,6 +47,7 @@ script = ExtResource("2_nev4a")
 name = "DialogueTheme"
 base_scene = ExtResource("1_jwqlp")
 base_overrides = {
+"canvas_layer": "15.0",
 "global_font": "\"res://assets/fonts/Minecraft-Regular.otf\"",
 "global_font_size": "32.0"
 }

@@ -1,7 +1,7 @@
 extends Control
 
 func _on_start_btn_button_up():
-	get_tree().change_scene_to_file("res://scenes/levels/DemoLevel.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/level1/Home.tscn")
 
 
 func _on_exit_btn_button_up():

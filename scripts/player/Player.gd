@@ -30,17 +30,16 @@ var inputs = {
 	'ui_right': Vector2.RIGHT
 }
 
-enum PlayerState {IDLE, TURNING, WALKING}
-enum FacingDirection {UP, DOWN, LEFT, RIGHT}
+enum PlayerState { IDLE, TURNING, WALKING }
+enum FacingDirection { UP, DOWN, LEFT, RIGHT }
 
-@export var player_state = PlayerState.IDLE
-@export var facing_direction = FacingDirection.DOWN
+@export var player_state:PlayerState = PlayerState.IDLE
+@export var facing_direction: FacingDirection
 
 var print_interact = false
 
 func _ready() -> void:
 	audio_stream.stream = footstep_sfx
-
 	match facing_direction:
 		FacingDirection.UP:
 			anim_tree.set("parameters/Idle/blend_position", Vector2.UP)
@@ -50,12 +49,13 @@ func _ready() -> void:
 			anim_tree.set("parameters/Idle/blend_position", Vector2.LEFT)
 		FacingDirection.RIGHT:
 			anim_tree.set("parameters/Idle/blend_position", Vector2.RIGHT)
+	anim_state.travel("Idle")
 
-# ? Physics Process function. Called for every second (i think). This method also processes
+# ? Physics Process function. Called every frame. This method also processes
 # ? user input. Reason behind why _physics_process instead of just _process is because we're
 # ? dealing with user movement, which involves moving not only the sprite, but also the user's
 # ? collision with the game world. Tutorials I've seen used _process, but I'd stick to _physics_process. -krColonia
-func _physics_process(_delta):
+func _process(_delta):
 	if !can_move:
 		return
 	if moving:
@@ -63,6 +63,7 @@ func _physics_process(_delta):
 	if player_state == PlayerState.TURNING:
 		return
 	
+	# FIXME: Fix movement, do not allow users to press any other direction if one is already pressed
 	for dir in inputs.keys():
 		if Input.is_action_pressed(dir):
 			anim_tree.set("parameters/Idle/blend_position", inputs[dir])
@@ -73,6 +74,23 @@ func _physics_process(_delta):
 				anim_state.travel("Turn")
 				return
 			move(dir)
+
+# ? Function used for the starting direction that the player is facing
+func starting_direction(dir: String) -> void:
+	match dir:
+		"UP":
+			facing_direction = FacingDirection.UP
+			anim_tree.set("parameters/Idle/blend_position", Vector2.UP)
+		"DOWN":
+			facing_direction = FacingDirection.DOWN
+			anim_tree.set("parameters/Idle/blend_position", Vector2.DOWN)
+		"LEFT":
+			facing_direction = FacingDirection.LEFT
+			anim_tree.set("parameters/Idle/blend_position", Vector2.LEFT)
+		"RIGHT":
+			facing_direction = FacingDirection.RIGHT
+			anim_tree.set("parameters/Idle/blend_position", Vector2.RIGHT)
+	anim_state.travel("Idle")
 
 # ? Function used to check if player needs to turn before moving in a specified direciton
 # ? If a player needs to turn before walking, returns true. else, returns false. -krColonia
@@ -135,5 +153,5 @@ func move_tween(dir) -> void:
 func stop_movement() -> void:
 	can_move = false
 
-func continue_movement():
+func continue_movement() -> void:
 	can_move = true

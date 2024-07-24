@@ -344,7 +344,6 @@ scale = Vector2(4.8, 8.53333)
 sprite_frames = SubResource("SpriteFrames_0hmhy")
 animation = &"Leaf"
 autoplay = "Leaf"
-frame_progress = 0.021174
 speed_scale = 1.75
 centered = false
 
