@@ -1,9 +1,13 @@
-res://scenes/npc/BaseNPC.tscn
+res://scenes/levels/level1/Lvl1_Interiors.tscn
 res://assets/themes/UI.tres
 res://assets/tilemap/interior-tilemap.tres
 res://assets/themes/DialogueTheme.tres
 res://assets/ui/shaders/melt_effect.gdshader
-res://dialogue/timelines/Test.dtl
+res://scripts/levels/level1/home_exit.gd
+res://scripts/levels/level1/tavern_exit.gd
+res://scripts/ui/scene_manager.gd
+res://scenes/ui/SceneManager.tscn
+res://scenes/menus/MainMenu.tscn
+res://scenes/levels/level1/Lvl1_Exterior.tscn
 res://scenes/player/Player.tscn
-res://scripts/gameplay/npc/base_npc.gd
-res://scripts/gameplay/interaction/interaction_area.gd
+res://scenes/ui/IngameUI.tscn

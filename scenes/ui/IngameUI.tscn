@@ -117,6 +117,7 @@ texture_normal = ExtResource("2_23o5f")
 passby_press = true
 
 [node name="MonitorOverlay" type="VBoxContainer" parent="Controls"]
+visible = false
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
 anchors_preset = 1
@@ -139,9 +140,9 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -248.0
+offset_left = -220.0
 offset_top = -272.0
-offset_right = -176.0
+offset_right = -148.0
 offset_bottom = -200.0
 grow_horizontal = 0
 grow_vertical = 0

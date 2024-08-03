@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogicStyle" load_steps=12 format=3 uid="uid://dh6dakmkq0sc7"]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=14 format=3 uid="uid://dh6dakmkq0sc7"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_16dg0"]
 [ext_resource type="PackedScene" uid="uid://cqpb3ie51rwl5" path="res://assets/dialogic_styles/CustomDialogueTheme/custom_dialogue_theme.tscn" id="1_jwqlp"]
@@ -7,10 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://cn674foxwedqu" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_Input/full_advance_input_layer.tscn" id="4_1uh2s"]
 [ext_resource type="PackedScene" uid="uid://co7nok0mvff4o" path="res://assets/dialogic_styles/CustomDialogueTheme/CustomDialogueChoices/CenteredChoices/custom_vn_choice_layer.tscn" id="4_2k84p"]
 [ext_resource type="PackedScene" uid="uid://dsbwnp5hegnu3" path="res://assets/dialogic_styles/CustomDialogueTheme/CustomGlossaryTheme/PopupGlossary/custom_glossary_popup_layer.tscn" id="6_hxfp8"]
+[ext_resource type="PackedScene" uid="uid://cy1y14inwkplb" path="res://assets/dialogic_styles/CustomDialogueTheme/CustomPortrait/5Portraits/custom_vn_portrait_layer.tscn" id="7_jv0fk"]
 
 [sub_resource type="Resource" id="Resource_j2en1"]
 script = ExtResource("1_16dg0")
 scene = ExtResource("4_1uh2s")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_fxkac"]
+script = ExtResource("1_16dg0")
+scene = ExtResource("7_jv0fk")
 overrides = {}
 
 [sub_resource type="Resource" id="Resource_c8v3e"]
@@ -51,5 +57,5 @@ base_overrides = {
 "global_font": "\"res://assets/fonts/Minecraft-Regular.otf\"",
 "global_font_size": "32.0"
 }
-layers = Array[ExtResource("1_16dg0")]([SubResource("Resource_j2en1"), SubResource("Resource_c8v3e"), SubResource("Resource_ervl7"), SubResource("Resource_jtbff")])
-metadata/_latest_layer = -1
+layers = Array[ExtResource("1_16dg0")]([SubResource("Resource_j2en1"), SubResource("Resource_fxkac"), SubResource("Resource_c8v3e"), SubResource("Resource_ervl7"), SubResource("Resource_jtbff")])
+metadata/_latest_layer = 1

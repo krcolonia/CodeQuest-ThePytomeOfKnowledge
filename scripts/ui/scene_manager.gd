@@ -1,14 +1,14 @@
 extends CanvasLayer
 
 # ? Game UI and Assets
-const dialogic_style = preload("res://assets/dialogic_styles/CustomDialogueTheme/DialogueStyle.tres")
+var dialogic_style = load("res://assets/dialogic_styles/CustomDialogueTheme/DialogueStyle.tres")
 
 # ? Main Menu
 const MAIN_MENU = preload("res://scenes/menus/MainMenu.tscn")
 
 # ? Level 1 Scenes
-const LEVEL1_HOME = preload("res://scenes/levels/level1/Home.tscn")
-const LEVEL1_TOWN = preload("res://scenes/levels/level1/Town.tscn")
+const LEVEL1_HOME = preload("res://scenes/levels/level1/Lvl1_Interiors.tscn")
+const LEVEL1_TOWN = preload("res://scenes/levels/level1/Lvl1_Exterior.tscn")
 
 @onready var color_rect =  $ColorRect
 @onready var label = $MarginContainer/Label

@@ -186,13 +186,13 @@ centered = false
 [node name="MenuBtns" type="VBoxContainer" parent="InputCanvasLayer"]
 anchors_preset = -1
 anchor_left = 0.251
-anchor_top = 0.473
+anchor_top = 0.51
 anchor_right = 0.749
-anchor_bottom = 0.909
-offset_left = 0.279984
-offset_top = 0.559998
+anchor_bottom = 0.864
+offset_left = 0.280014
+offset_top = 0.199951
 offset_right = -0.280029
-offset_bottom = -0.52002
+offset_bottom = 0.0799561
 theme_override_constants/separation = 10
 alignment = 1
 
@@ -212,6 +212,7 @@ theme_override_font_sizes/font_size = 32
 text = "SETTINGS"
 
 [node name="LogoutBtn" type="Button" parent="InputCanvasLayer/MenuBtns"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("5_6ow6f")

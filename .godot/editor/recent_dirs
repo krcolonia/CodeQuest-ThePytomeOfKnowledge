@@ -1,5 +1,11 @@
-res://assets/ui/shaders
 res://scripts/levels/level1
+res://dialogue/Level1
+res://assets/portraits/Level1
+res://assets/dialogic_character
+res://assets/dialogic_styles/CustomDialogueTheme/CustomPortrait
+res://assets/object
+res://assets/portraits
+res://assets/ui/shaders
 res://scenes/ui
 res://scenes/objects
 res://assets/fonts
@@ -8,15 +14,10 @@ res://assets/dialogic_styles/CustomDialogueTheme/CustomGlossaryTheme
 res://assets/dialogic_glossary
 C:/Users/kurut0/Desktop/CodeQuest_GD4
 res://assets/dialogic_styles/CustomDialogueTheme/CustomDialogueChoices
-res://assets/dialogic_character
 res://dialogue/timelines
 res://scenes/npc
 res://assets/dialogic_styles
 res://assets/themes
 res://scripts/ui
 res://assets/tilemap
-res://scripts/gameplay/objects
-res://scenes/interaction
-res://scripts/gameplay/interaction
-res://scripts/player
 C:/Users/kurut0/AppData/Local/Programs/Microsoft VS Code

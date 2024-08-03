@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://g04brrptnxbk"]
+[gd_scene load_steps=22 format=3 uid="uid://g04brrptnxbk"]
 
 [ext_resource type="Script" path="res://scripts/gameplay/npc/base_npc.gd" id="1_3itjb"]
 [ext_resource type="Texture2D" uid="uid://cgmkqi17ce1m3" path="res://assets/player/DummySprite.png" id="1_5wcxi"]
@@ -16,23 +16,10 @@ size = Vector2(6, 12)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnjy4"]
 size = Vector2(6, 12)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_jq8mg"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bcra5"]
 size = Vector2(16, 16)
-
-[sub_resource type="Animation" id="Animation_cf5vt"]
-resource_name = "idle_up"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [12]
-}
 
 [sub_resource type="Animation" id="Animation_68vuu"]
 length = 0.001
@@ -97,6 +84,21 @@ tracks/0/keys = {
 "values": [4]
 }
 
+[sub_resource type="Animation" id="Animation_cf5vt"]
+resource_name = "idle_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [12]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yds01"]
 _data = {
 "RESET": SubResource("Animation_68vuu"),
@@ -137,6 +139,7 @@ states/Idle/position = Vector2(321, 100)
 script = ExtResource("1_3itjb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
 texture = ExtResource("1_5wcxi")
 hframes = 4
 vframes = 4
@@ -145,24 +148,37 @@ vframes = 4
 action_name = "talk"
 interact_type = "talk"
 
-[node name="CollisionUp" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
+[node name="AreaUp" type="Area2D" parent="Sprite2D/InteractionArea"]
+
+[node name="CollisionUp" type="CollisionShape2D" parent="Sprite2D/InteractionArea/AreaUp"]
 position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_eh6wc")
 debug_color = Color(0.705882, 0, 0, 0.419608)
 
-[node name="CollisionDown" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
+[node name="AreaDown" type="Area2D" parent="Sprite2D/InteractionArea"]
+
+[node name="CollisionDown" type="CollisionShape2D" parent="Sprite2D/InteractionArea/AreaDown"]
 position = Vector2(0, 19)
 shape = SubResource("RectangleShape2D_h05pj")
 debug_color = Color(0.705882, 0, 0, 0.419608)
 
-[node name="CollisionLeft" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
+[node name="AreaLeft" type="Area2D" parent="Sprite2D/InteractionArea"]
+
+[node name="CollisionLeft" type="CollisionShape2D" parent="Sprite2D/InteractionArea/AreaLeft"]
 position = Vector2(-11, 8)
 shape = SubResource("RectangleShape2D_ma6rr")
 debug_color = Color(0.705882, 0, 0, 0.419608)
 
-[node name="CollisionRight" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
+[node name="AreaRight" type="Area2D" parent="Sprite2D/InteractionArea"]
+
+[node name="CollisionRight" type="CollisionShape2D" parent="Sprite2D/InteractionArea/AreaRight"]
 position = Vector2(11, 8)
 shape = SubResource("RectangleShape2D_gnjy4")
+debug_color = Color(0.705882, 0, 0, 0.419608)
+
+[node name="InteractionShape" type="CollisionShape2D" parent="Sprite2D/InteractionArea"]
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_jq8mg")
 debug_color = Color(0.705882, 0, 0, 0.419608)
 
 [node name="CollisionBody" type="StaticBody2D" parent="Sprite2D"]
@@ -190,19 +206,28 @@ parameters/End/current_delta = null
 parameters/Idle/current_length = 1.0
 parameters/Idle/current_position = 1.0
 parameters/Idle/current_delta = 0.0
-parameters/Idle/blend_position = Vector2(0, 1)
-parameters/Idle/0/current_length = null
-parameters/Idle/0/current_position = null
-parameters/Idle/0/current_delta = null
-parameters/Idle/1/current_length = false
-parameters/Idle/1/current_position = false
-parameters/Idle/1/current_delta = false
-parameters/Idle/2/current_length = false
-parameters/Idle/2/current_position = false
-parameters/Idle/2/current_delta = false
+parameters/Idle/blend_position = Vector2(-0.00787401, 0.0106382)
+parameters/Idle/0/current_length = 1.0
+parameters/Idle/0/current_position = 1.0
+parameters/Idle/0/current_delta = 0.0
+parameters/Idle/1/current_length = 1.0
+parameters/Idle/1/current_position = 0.0666667
+parameters/Idle/1/current_delta = 0.0166667
+parameters/Idle/2/current_length = 1.0
+parameters/Idle/2/current_position = 1.0
+parameters/Idle/2/current_delta = 0.0
 parameters/Idle/3/current_length = 1.0
-parameters/Idle/3/current_position = 1.0
-parameters/Idle/3/current_delta = 0.0
+parameters/Idle/3/current_position = 0.55
+parameters/Idle/3/current_delta = 0.0166667
 parameters/Start/current_length = 0.0
 parameters/Start/current_position = 0.0
 parameters/Start/current_delta = 0.0
+
+[connection signal="body_entered" from="Sprite2D/InteractionArea/AreaUp" to="." method="_on_area_up_body_entered"]
+[connection signal="body_exited" from="Sprite2D/InteractionArea/AreaUp" to="." method="_on_area_up_body_exited"]
+[connection signal="body_entered" from="Sprite2D/InteractionArea/AreaDown" to="." method="_on_area_down_body_entered"]
+[connection signal="body_exited" from="Sprite2D/InteractionArea/AreaDown" to="." method="_on_area_down_body_exited"]
+[connection signal="body_entered" from="Sprite2D/InteractionArea/AreaLeft" to="." method="_on_area_left_body_entered"]
+[connection signal="body_exited" from="Sprite2D/InteractionArea/AreaLeft" to="." method="_on_area_left_body_exited"]
+[connection signal="body_entered" from="Sprite2D/InteractionArea/AreaRight" to="." method="_on_area_right_body_entered"]
+[connection signal="body_exited" from="Sprite2D/InteractionArea/AreaRight" to="." method="_on_area_right_body_exited"]

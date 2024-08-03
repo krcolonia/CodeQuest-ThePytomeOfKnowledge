@@ -26,14 +26,17 @@ SceneManager="*res://scenes/ui/SceneManager.tscn"
 InteractionManager="*res://scenes/interaction/interaction_manager.tscn"
 JDoodle="*res://scripts/backend/JDoodle.gd"
 Firebase="*res://scripts/backend/Firebase.gd"
+DiscordRPCLoader="*res://addons/discord-rpc-gd/nodes/discord_autoload.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
-"DemoTestChar": "res://assets/dialogic_character/DemoTestChar.dch"
+"DemoTestChar": "res://assets/dialogic_character/DemoTestChar.dch",
+"Mother_Char": "res://assets/dialogic_character/Mother_Char.dch"
 }
 directories/dtl_directory={
+"Home_Mother": "res://dialogue/Level1/Home_Mother.dtl",
 "Test": "res://dialogue/timelines/Test.dtl"
 }
 glossary/default_case_sensitive=true
@@ -77,7 +80,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/monitor_overlay/plugin.cfg")
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/Todo_Manager/plugin.cfg", "res://addons/dialogic/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg", "res://addons/monitor_overlay/plugin.cfg")
 
 [global_group]
 
