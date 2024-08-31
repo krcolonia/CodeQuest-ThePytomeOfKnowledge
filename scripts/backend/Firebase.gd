@@ -5,7 +5,7 @@ extends Node
 # ! these functions anytime. -krColonia
 
 const API_KEY # ! Hid API key for security reasons
-const PROJECT_ID ! Hid project ID for security reasons
+const PROJECT_ID # ! Hid project ID for security reasons
 
 # ? URLs for HTTPRequests
 const REGISTER_URL := "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=%s" % API_KEY
