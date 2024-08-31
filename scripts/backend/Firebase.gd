@@ -4,10 +4,8 @@ extends Node
 # ! we are in the game. This is made so that we could access all
 # ! these functions anytime. -krColonia
 
-const API_KEY := "AIzaSyAWJri4kTZFR2SRanw-HYVCvytTSqcL9Ko"
-const PROJECT_ID := "code-quest-game"
-# ? ^ this probably SHOULD NOT be public for privacy reasons.
-# ?   IF PUSHING TO PUBLIC GITHUB REPO, HIDE THESE! -krColonia
+const API_KEY # ! Hid API key for security reasons
+const PROJECT_ID ! Hid project ID for security reasons
 
 # ? URLs for HTTPRequests
 const REGISTER_URL := "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=%s" % API_KEY
