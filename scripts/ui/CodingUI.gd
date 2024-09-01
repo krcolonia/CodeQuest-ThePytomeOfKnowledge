@@ -5,7 +5,7 @@ extends CanvasLayer
 @onready var http: HTTPRequest = $HTTPRequest
 
 const CLIENT_ID # ? REMOVED CLIENT ID, If you're planning on using the Client ID of my account, tough luck.
-const CLIENT_SECRET # ? REMOVED CLIENT ID, If you're planning on using the Client Secret of my account, tough luck.
+const CLIENT_SECRET # ? REMOVED CLIENT SECRET, If you're planning on using the Client Secret of my account, tough luck.
 
 const EXEC_URL := "https://api.jdoodle.com/v1/execute"
 
