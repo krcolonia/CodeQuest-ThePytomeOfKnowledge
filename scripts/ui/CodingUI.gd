@@ -4,8 +4,8 @@ extends CanvasLayer
 @onready var console: TextEdit = $Panel/MarginContainer/VBoxContainer/Output
 @onready var http: HTTPRequest = $HTTPRequest
 
-const CLIENT_ID := "4f548172c9731412d6eaecb65ad4939e"
-const CLIENT_SECRET := "4ac1d0ca01ac519816fd26090a8993035fdb4089791ec8d4f35c69dfdcc19a0f"
+const CLIENT_ID # ? REMOVED CLIENT ID, If you're planning on using the Client ID of my account, tough luck.
+const CLIENT_SECRET # ? REMOVED CLIENT ID, If you're planning on using the Client Secret of my account, tough luck.
 
 const EXEC_URL := "https://api.jdoodle.com/v1/execute"
 
